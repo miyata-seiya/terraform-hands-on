@@ -1,0 +1,26 @@
+{
+    "name": "${localWorkspaceFolderBasename}",
+    "image": "mcr.microsoft.com/devcontainers/base:1.2.3-ubuntu-24.04@sha256:167e522ad50971b29dda8c09faac30562fce5a7596f1aba765995728985184b8",
+    "features": {
+        "ghcr.io/devcontainers/features/aws-cli:1": {},
+        "ghcr.io/devcontainers/features/git:1": {},
+        "ghcr.io/devcontainers/features/github-cli:1": {},
+        "ghcr.io/devcontainers/features/terraform:1": {
+            // https://github.com/devcontainers/features/tree/main/src/terraform
+            "version": "1.10.5",
+            "installTerraformDocs": true
+        },
+    },
+    "mounts": [
+        "source=${localEnv:HOME}/.aws,target=/home/vscode/.aws,type=bind,readonly",
+        "source=${localEnv:HOME}/.aws/cli/cache,target=/home/vscode/.aws/cli/cache,type=bind"
+    ],
+    "postCreateCommand": "terraform -install-autocomplete",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "hashicorp.terraform"
+            ]
+        }
+    }
+}
