@@ -8,7 +8,8 @@ terraform {
   }
 }
 
-# ref: https://registry.terraform.io/providers/hashicorp/aws/latest/docs
 provider "aws" {
-  region = "ap-northeast-1"
+  # Configuration options
+  region  = "ap-northeast-1"
+  profile = "設定値は別途指示します。"
 }
