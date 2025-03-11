@@ -6,7 +6,7 @@ terraform {
     key    = "terraform-hands-on/<your-name>/development/terraform.tfstate"
     region = "ap-northeast-1"
     # 指定のprofile名に置き換えてください
-    # profile = ""
+    # profile = "リモートステート用S3バケットを指定してください。"
     # 以下はオプションですが、本番環境では推奨されます
     # encrypt = true
     # dynamodb_table = "terraform-state-lock"

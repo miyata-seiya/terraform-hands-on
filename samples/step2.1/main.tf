@@ -15,7 +15,7 @@ terraform {
 provider "aws" {
   # Configuration options
   region  = "ap-northeast-1"
-  profile = "設定値は別途指示します。"
+  profile = "リソースデプロイ先AWSアカウントのProfileを指定してください。"
 }
 
 data "aws_caller_identity" "this" {}
@@ -23,7 +23,7 @@ data "aws_caller_identity" "this" {}
 # S3バケットのユニーク名を作成するためのランダム文字列を生成
 resource "random_id" "this" {
   keepers = {
-    "name" = "your-name"
+    "name" = "seed値として自身の名前を記入してください"
   }
   byte_length = 8
 }
